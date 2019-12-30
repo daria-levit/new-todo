@@ -12,12 +12,19 @@
                         {{ task.title }}
                     </div>
                 </div>
-                <input
-                        type="button"
+                <v-btn
                         class="task-button-right"
-                        value="✕"
+                        small text icon
                         @click="deleteTask(task.id)"
                 >
+                    <v-icon>mdi-close</v-icon>
+                </v-btn>
+<!--                <input-->
+<!--                        type="button"-->
+<!--                        class="task-button-right"-->
+<!--                        value="✕"-->
+<!--                        @click="deleteTask(task.id)"-->
+<!--                >-->
             </div>
         </div>
     </div>
@@ -58,24 +65,28 @@
     }
     .task {
         display : flex;
+        align-items: center;
     }
     .task-left {
         display    : flex;
         width      : 100%;
-        margin-top : 15px;
+        /*margin-top : 15px;*/
     }
     .checkbox {
-        min-width : 15px;
-        height    : 15px;
+        min-width : 20px;
+        height    : 20px;
+        margin: auto 0;
     }
     .checkbox:checked ~ .text {
         text-decoration : line-through;
     }
     .text {
         margin : 0 0 0 10px;
+        color: white;
+        font-size: 22px;
     }
     .task-button-right {
-        margin    : 15px 0 0 10px;
+        /*margin    : 15px 0 0 10px;*/
         width     : 20px;
         height    : 20px;
         padding   : 0;

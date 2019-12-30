@@ -1,21 +1,24 @@
 <template>
     <div class="input-task">
-        <form name="form">
-            <input
+        <div class="input">
+            <v-text-field
+                    height="28"
                     v-model="someTask"
+                    @keypress.enter.prevent="addTask"
+                    placeholder="add to the list"
                     type="text"
                     name="textview"
-                    placeholder="add to the list"
-                    class="input"
-                    @keypress.enter.prevent="addTask"
-            >
-        </form>
+                    solo
+                    dense
+            ></v-text-field>
+        </div>
         <div class="button">
-            <input
-                    type="button"
-                    value="OK"
+            <v-btn
+                    normal
                     @click="addTask"
             >
+                OK
+            </v-btn>
         </div>
     </div>
 </template>
@@ -40,10 +43,11 @@
     .input-task {
         display         : flex;
         justify-content : center;
-        margin-bottom   : 20px;
+        margin   : 30px 5px 30px 5px;
     }
     .input {
-        width : 250px;
+        padding: 0;
+        width: 250px;
     }
     .button {
         margin : 0 0 0 15px;

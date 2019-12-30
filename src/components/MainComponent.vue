@@ -64,4 +64,11 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    .main{
+        margin: 0 auto;
+        padding: 15px;
+        background: rgba(10, 16, 89, 0.3);
+        border-radius: 10px;
+        max-width: 400px;
+    }
 </style>

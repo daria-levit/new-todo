@@ -1,7 +1,5 @@
 <template>
-    <div class="header">
-        <h1>To do list</h1>
-    </div>
+        <div class="white--text text-center display-2 font-weight-medium">To do list</div>
 </template>
 
 <script>
@@ -12,8 +10,5 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .header {
-        text-align : center;
-        color      : #ffffff;
-    }
+
 </style>
