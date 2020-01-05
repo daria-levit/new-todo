@@ -1,8 +1,7 @@
 <template>
-    <div class="input-task">
-        <div class="input">
+    <div class="input d-flex justify-center my-7 mx-1">
             <v-text-field
-                    height="28"
+                    class="pa-0"
                     v-model="someTask"
                     @keypress.enter.prevent="addTask"
                     placeholder="add to the list"
@@ -11,15 +10,14 @@
                     solo
                     dense
             ></v-text-field>
-        </div>
-        <div class="button">
+
             <v-btn
+                    class="ml-4"
                     normal
                     @click="addTask"
             >
                 OK
             </v-btn>
-        </div>
     </div>
 </template>
 
@@ -40,16 +38,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .input-task {
-        display         : flex;
-        justify-content : center;
-        margin   : 30px 5px 30px 5px;
-    }
-    .input {
-        padding: 0;
-        width: 250px;
-    }
-    .button {
-        margin : 0 0 0 15px;
-    }
+.input{
+    max-height: 36px;
+}
 </style>

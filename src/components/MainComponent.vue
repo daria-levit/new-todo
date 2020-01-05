@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div class="main my-0 mx-auto pa-4">
         <HeaderComponent />
         <InputComponent
                 @addTask="addTask"
@@ -28,6 +28,7 @@
         data: () => ({
             toDoList: [],
             someTask: '',
+            checkbox: false,
         }),
         computed: {
             sortedList() {
@@ -54,6 +55,8 @@
             isDone(id) {
                 const task = this.toDoList.find((item) => (item.id) === id);
                 task.done = !task.done;
+                // eslint-disable-next-line
+                console.log(id, task.done)
             },
             deleteTask(id) {
                 this.toDoList = this.toDoList.filter((task) => (task.id) !== id);
@@ -65,8 +68,6 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
     .main{
-        margin: 0 auto;
-        padding: 15px;
         background: rgba(10, 16, 89, 0.3);
         border-radius: 10px;
         max-width: 400px;

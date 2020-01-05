@@ -1,19 +1,28 @@
 <template>
-    <div class="container">
-        <div class="list">
-            <div class="task">
-                <div class="task-left">
-                    <input
-                            type="checkbox"
-                            class="checkbox"
-                            @click="isDone(task.id)"
+    <div class="container d-flex justify-center align-center pa-0">
+        <div class="list d-flex flex-column">
+            <div class="d-flex align-center">
+                <div class="task-left d-flex">
+                    <v-checkbox
+                            @change="isDone(task.id)"
+                            v-model="checkbox"
+                            class="checkbox ma-0"
+                            color="indigo darken-4"
                     >
-                    <div class="text">
+                    </v-checkbox>
+<!--                    <input-->
+<!--                            class="checkbox my-auto"-->
+<!--                            type="checkbox"-->
+<!--                            @click="isDone(task.id)"-->
+<!--                    >-->
+                    <div class="headline white--text ml-3"
+                         :class="{ 'checkbox-done': task.done }"
+                    >
                         {{ task.title }}
                     </div>
                 </div>
                 <v-btn
-                        class="task-button-right"
+                        class="task-button-right pa-0"
                         small text icon
                         @click="deleteTask(task.id)"
                 >
@@ -33,6 +42,9 @@
 <script>
     export default {
         name: 'TasksComponent',
+        data: () => ({
+            checkbox: false,
+        }),
         props: {
             task: {
                 type: Object,
@@ -54,42 +66,22 @@
 <style scoped>
     .container {
         height          : 45px;
-        display         : flex;
-        justify-content : center;
-        font-size       : 18px;
     }
     .list {
-        display        : flex;
-        flex-direction : column;
         width          : 300px;
     }
-    .task {
-        display : flex;
-        align-items: center;
-    }
     .task-left {
-        display    : flex;
         width      : 100%;
-        /*margin-top : 15px;*/
     }
     .checkbox {
         min-width : 20px;
         height    : 20px;
-        margin: auto 0;
     }
-    .checkbox:checked ~ .text {
+    .checkbox-done{
         text-decoration : line-through;
     }
-    .text {
-        margin : 0 0 0 10px;
-        color: white;
-        font-size: 22px;
-    }
     .task-button-right {
-        /*margin    : 15px 0 0 10px;*/
         width     : 20px;
         height    : 20px;
-        padding   : 0;
-        font-size : 16px;
     }
 </style>

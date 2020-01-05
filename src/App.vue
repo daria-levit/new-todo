@@ -1,6 +1,9 @@
 <template>
-  <v-app id="app">
-      <v-content>
+  <v-app
+          id="app"
+          class="mx-0"
+  >
+      <v-content class="pt-5">
           <MainComponent/>
       </v-content>
     </v-app>
@@ -29,8 +32,6 @@ height : 100%;
 #app {
 background        : linear-gradient(45deg, #1d1838, #d0b5e8, #85ccec, #02335d);
 background-repeat : no-repeat;
-margin            : 0;
-padding           : 20px 0 0 0;
 font-family       : Arial, sans-serif;
 }
 
